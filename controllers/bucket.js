@@ -19,10 +19,9 @@ module.exports = function(req, res) {
         // create thumbnail from temp file
         return thumbinator(data)
     })
-    // .then((data) => { 
-    //     // upload file and thumbnail to S3
-    //     return bucketUploader(data)
-    // })
+    .then((data) => { 
+        return bucketUploader(data)
+    })
     .then((data) => { 
         return renderer(data)
     })
